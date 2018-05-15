@@ -8,6 +8,7 @@ resource "aws_lambda_function" "lambda" {
   source_code_hash = "${aws_s3_bucket_object.lambda_dist.etag}"
   s3_bucket = "${aws_s3_bucket.lambda_repo.bucket}"
   s3_key = "${var.lambda_code_s3_key}"
+  memory_size = "${var.lambda_memory_size}"
 
   environment {
     variables = "${var.environmentVariables}"

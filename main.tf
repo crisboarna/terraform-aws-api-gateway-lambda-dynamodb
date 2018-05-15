@@ -30,6 +30,7 @@ module "lambda" {
   lambda_code_s3_storage_class = "${var.lambda_code_s3_storage_class}"
   lambda_code_s3_bucket_visibility = "${var.lambda_code_s3_bucket_visibility}"
   lambda_zip_path = "${var.lambda_zip_path}"
+  lambda_memory_size = "${var.lambda_memory_size}"
 
   #Internal
   lambda_role = "${module.iam.lambda_role_arn}"

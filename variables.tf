@@ -70,6 +70,11 @@ variable "lambda_zip_path" {
   description = "Local path to Lambda zip code"
 }
 
+variable "lambda_memory_size" {
+  description = "Lambda memory size"
+}
+
+
 
 #API Gateway Setup
 variable "api_gw_method" {

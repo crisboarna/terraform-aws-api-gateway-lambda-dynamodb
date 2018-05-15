@@ -62,3 +62,8 @@ variable "lambda_code_s3_bucket_visibility" {
 variable "lambda_zip_path" {
   description = "Local path to Lambda source dist"
 }
+
+variable "lambda_memory_size" {
+  description = "Lambda memory size"
+  default = 128
+}
