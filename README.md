@@ -107,7 +107,5 @@ module "api_lambda_dynamodb" {
   environmentVariables = {
     NODE_ENV = "production"
   }
-  
-  
 }
 ```
