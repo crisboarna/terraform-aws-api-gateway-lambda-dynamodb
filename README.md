@@ -46,7 +46,7 @@ module "api-gateway-lambda-dynamodb" {
 
 **Example Deployment Script**
 ```js
-#!/usr/bin/env bah
+#!/usr/bin/env bash
 
 if [[ ! -d .terraform ]]; then
   terraform init
