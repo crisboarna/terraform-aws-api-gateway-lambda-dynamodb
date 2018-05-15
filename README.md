@@ -29,11 +29,11 @@ This module is optional. Lambda is created with R/W permission for DynamoDB to a
 
 ## Usage
 ```hcl-terraform
-module "api_lambda_dynamodb" {
-  source  = "crisboarna/terraform-aws-api-gateway-lambda-dynamodb"
-  version = "v0.1.0"
+module "api-gateway-lambda-dynamodb" {
+  source  = "crisboarna/api-gateway-lambda-dynamodb/aws"
+  version = "0.1.1"
 
-  # insert the required variables here
+  # insert the 10 required variables here
 }
 ```
 
