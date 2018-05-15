@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:CreateTable",
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:DeleteItem",
+        "dynamodb:GetItem",
+        "dynamodb:Scan",
+        "dynamodb:Query",
+        "dynamodb:UpdateItem",
+        "dynamodb:DeleteTable",
+        "dynamodb:UpdateTable",
+        "dynamodb:ListTables"
+      ],
+      "Resource": "arn:aws:dynamodb:*:*:table/*"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+#TAGS
+variable "tags" {
+  type = "map"
+  description = "Tags for lambda"
+  default = {}
+}
+
+
+#Environment variables
+variable "environmentVariables" {
+  type = "map"
+  description = "Azure Bot Subscription ID"
+}
+
+
+#SETUP
+
+
+#Global
+variable "region" {
+  description = "Region to deploy in"
+}
+
+variable "project" {
+  description = "Name of project"
+}
+
+#Lambda
+variable "lambda_function_name" {
+  description = "Local path to Lambda zip code"
+}
+
+variable "lambda_description" {
+  default = ""
+  description = "Lambda description"
+}
+
+variable "lambda_runtime" {
+  description = "Lambda runtime"
+}
+
+variable "lambda_handler" {
+  description = "Lambda handler path"
+}
+
+variable "lambda_timeout" {
+  description = "Maximum runtime for Lambda"
+  default = 30
+}
+
+variable "lambda_code_s3_bucket" {
+  description = "Location of Lambda code in S3"
+}
+
+variable "lambda_code_s3_key" {
+  description = "Location of Lambda code in S3 bucket"
+}
+
+variable "lambda_code_s3_storage_class" {
+  description = "Lambda code S3 storage class"
+  default = "ONEZONE_IA"
+}
+
+variable "lambda_code_s3_bucket_visibility" {
+  default = "private"
+  description = "S3 bucket ACL"
+}
+
+variable "lambda_zip_path" {
+  description = "Local path to Lambda zip code"
+}
+
+
+#API Gateway Setup
+variable "api_gw_method" {
+  description = "API Gateway method (GET,POST...)"
+  default = "POST"
+}
+
+#DynamoDB
+variable "dynamodbTableData" {
+  description = "List of maps representing a table each. name (required), read_capacity(default=1), write_capacity(default=1)"
+  default = []
+  type = "list"
+}
