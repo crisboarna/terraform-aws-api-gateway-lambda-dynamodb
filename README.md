@@ -1,7 +1,7 @@
 # Terraform AWS API Gateway Lambda DynamoDB
 
 ### Terraform module for AWS API Gateway Lambda DynamoDB infrastructure
-[![MIT License](https://img.shields.io/npm/l/terraform-aws-api-gateway-lambda-dynamodb.svg)](http://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
 ## Table of Contents
