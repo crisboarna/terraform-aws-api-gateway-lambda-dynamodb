@@ -15,7 +15,6 @@ variable "environmentVariables" {
 
 #SETUP
 
-
 #Global
 variable "region" {
   description = "Region to deploy in"

@@ -1,11 +1,3 @@
-variable "region" {
-  description = "Region to deploy in"
-}
-
-variable "project" {
-  description = "Name of project"
-}
-
 variable "lambda_name" {
   description = "The name of the Lambda function"
 }
