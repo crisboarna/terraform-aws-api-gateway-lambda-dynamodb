@@ -56,8 +56,6 @@ module "iam" {
   source = "./modules/global/iam"
 
   #Setup
-  region = "${var.region}"
-  project = "${var.project}"
   lambda_name = "${local.lambda_function_name}"
   api_gw_name = "${module.apigw.api_gw_name}"
   api_gw_id = "${module.apigw.api_gw_id}"
