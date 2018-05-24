@@ -22,6 +22,7 @@ I will expand this in later versions to be user provided.
 **Lambda**
 
 This module is created with full customization by user.
+Exports S3 bucket to allow usage by multiple Lambda's
 
 **DynamoDB**
 
