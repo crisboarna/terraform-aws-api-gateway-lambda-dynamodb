@@ -27,3 +27,7 @@ output "lambda_role_id" {
 output "lambda_role_arn" {
   value = "${module.iam.lambda_role_arn}"
 }
+
+output "lambda_s3_bucket" {
+  value = "${module.lambda.lambda_s3_bucket}"
+}
