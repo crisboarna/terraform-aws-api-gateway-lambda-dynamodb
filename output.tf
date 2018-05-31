@@ -31,3 +31,7 @@ output "lambda_role_arn" {
 output "lambda_s3_bucket" {
   value = "${module.lambda.lambda_s3_bucket}"
 }
+
+output "dynamodb_table_name" {
+  value = "${module.dynamodb.dynamodb_table_names}"
+}
