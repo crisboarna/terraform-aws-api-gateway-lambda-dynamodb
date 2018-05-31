@@ -35,3 +35,7 @@ output "lambda_s3_bucket" {
 output "dynamodb_table_name" {
   value = "${module.dynamodb.dynamodb_table_names}"
 }
+
+output "dynamodb_table_hash_keys" {
+  value = ["${module.dynamodb.dynamodb_table_hash_keys}"]
+}
