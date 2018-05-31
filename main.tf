@@ -46,7 +46,9 @@ module "dynamodb" {
   source = "./modules/services/dynamodb"
 
   #Setup
-  table_data = "${var.dynamodbTableData}"
+  dynamodb_table_properties = "${var.dynamodb_table_properties}"
+  dynamodb_table_attributes = "${var.dynamodb_table_attributes}"
+  dynamodb_table_secondary_index = "${var.dynamodb_table_secondary_index}"
 
   #Tags
   tags = "${var.tags}"

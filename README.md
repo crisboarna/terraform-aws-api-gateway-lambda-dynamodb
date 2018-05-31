@@ -28,6 +28,8 @@ Exports S3 bucket to allow usage by multiple Lambda's
 
 This module is optional. Lambda is created with R/W permission for DynamoDB to allow Lambda creation of tables or optionally to create them before-hand with this script.
 
+**NOTE**
+The attributes and table properties are in separate lists due to current HCL language parser limitations. Will update to single cohesive object once situation improves.
 ## Usage
 ```hcl-terraform
 module "api-gateway-lambda-dynamodb" {
@@ -88,16 +90,47 @@ module "api_lambda_dynamodb" {
   lambda_memory_size = 256
   
   #DynamoDB
-  table_data = [
+  dynamodb_table_properties = [
     { 
       name = "Awesome Project Table 1"
     },
     {
       name = "Awesome Project Table 2",
       read_capacity = 2,
-      write_capacity = 3
+      write_capacity = 3,
+      hash_key = "KEY"
+      range_key = ""
+      stream_enabled = "true"
+      stream_view_type = "NEW_IMAGE"
     }
   ]
+  
+  dynamodb_table_attributes = [[
+    {
+      name = "KEY"
+      type = "S"
+    }],[
+    {
+      name = "PRIMARY_KEY"
+      type = "N"
+    }, {
+      name = "SECONDARY_KEY"
+      type = "S"
+    }
+   ]]
+   
+   dynamodb_table_secondary_index = [[
+    {
+      name               = "GameTitleIndex"
+      hash_key           = "GameTitle"
+      range_key          = "TopScore"
+      write_capacity     = 10
+      read_capacity      = 10
+      projection_type    = "INCLUDE"
+      non_key_attributes = ["UserId"]
+    }
+   ]]
+    
   #Tags
   tags = {
     project = "Awesome Project"
