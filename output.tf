@@ -43,3 +43,7 @@ output "dynamodb_table_hash_keys" {
 output "dynamodb_table_range_keys" {
   value = ["${module.dynamodb.dynamodb_table_range_keys}"]
 }
+
+output "dynamodb_table_arns" {
+  value = ["${module.dynamodb.dynamodb_table_arns}"]
+}

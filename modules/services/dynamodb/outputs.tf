@@ -9,3 +9,7 @@ output "dynamodb_table_hash_keys" {
 output "dynamodb_table_range_keys" {
   value = ["${aws_dynamodb_table.table.*.range_key}"]
 }
+
+output "dynamodb_table_arns" {
+  value = ["${aws_dynamodb_table.table.*.arn}"]
+}
