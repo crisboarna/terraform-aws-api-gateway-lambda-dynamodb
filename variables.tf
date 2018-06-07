@@ -7,7 +7,7 @@ variable "tags" {
 
 
 #Environment variables
-variable "environmentVariables" {
+variable "environment_variables" {
   type = "map"
   description = "Azure Bot Subscription ID"
 }
@@ -74,12 +74,12 @@ variable "lambda_memory_size" {
 }
 
 
-
 #API Gateway Setup
 variable "api_gw_method" {
   description = "API Gateway method (GET,POST...)"
   default = "POST"
 }
+
 
 #DynamoDB
 variable "dynamodb_table_properties" {
@@ -96,4 +96,10 @@ variable "dynamodb_table_secondary_index" {
   type = "list"
   default = [[]]
   description = "List of list of maps representing each table secondary index list. Required due to current HCL limitations"
+}
+
+variable "dynamodb_policy_action_list" {
+  description = "List of Actions to be executed"
+  type = "list"
+  default = ["dynamodb:DescribeTable", "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:Scan", "dynamodb:Query"]
 }

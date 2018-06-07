@@ -36,7 +36,7 @@ module "lambda" {
   lambda_role = "${module.iam.lambda_role_arn}"
 
   #Environment variables
-  environmentVariables = "${var.environmentVariables}"
+  environment_variables = "${var.environment_variables}"
 
   #Tags
   tags = "${var.tags}"
@@ -61,4 +61,6 @@ module "iam" {
   lambda_name = "${local.lambda_function_name}"
   api_gw_name = "${module.apigw.api_gw_name}"
   api_gw_id = "${module.apigw.api_gw_id}"
+  dynamodb_arn_list = "${module.dynamodb.dynamodb_table_arns}"
+  dynamodb_policy_action_list = "${var.dynamodb_policy_action_list}"
 }

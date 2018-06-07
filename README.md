@@ -1,9 +1,9 @@
 # Terraform AWS API Gateway Lambda DynamoDB
 
 ### Terraform module for AWS API Gateway Lambda DynamoDB infrastructure
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+![stability-stable](https://img.shields.io/badge/stability-stable-brightgreen.svg)
+![Commitizen-friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
 ## Table of Contents
 * [Features](#features)
 * [Usage](#usage)
@@ -23,12 +23,16 @@ I will expand this in later versions to be user provided.
 
 This module is created with full customization by user.
 Exports S3 bucket to allow usage by multiple Lambda's
+- This module by default, if created allows accompanying Lambda access to `dynamodb:PutItem`, `dynamodb:DescribeTable`, `dynamodb:DeleteItem`, `dynamodb:GetItem`, `dynamodb:Scan`, `dynamodb:Query` all DynamoDB tables.
+
 
 **DynamoDB**
 
 This module is optional. Lambda is created with R/W permission for DynamoDB to allow Lambda creation of tables or optionally to create them before-hand with this script.
+- This module by default, if created allows accompanying Lambda access to `dynamodb:PutItem`, `dynamodb:DescribeTable`, `dynamodb:DeleteItem`, `dynamodb:GetItem`, `dynamodb:Scan`, `dynamodb:Query` all DynamoDB tables.
 
 **NOTE**
+
 The attributes and table properties are in separate lists due to current HCL language parser limitations. Will update to single cohesive object once situation improves.
 ## Usage
 ```hcl-terraform
@@ -130,6 +134,8 @@ module "api_lambda_dynamodb" {
       non_key_attributes = ["UserId"]
     }
    ]]
+   
+   dynamodb_policy_action_list = ["dynamodb:PutItem", "dynamodb:DescribeTable", "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:Scan", "dynamodb:Query"]
     
   #Tags
   tags = {

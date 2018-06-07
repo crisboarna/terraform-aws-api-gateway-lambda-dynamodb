@@ -6,7 +6,7 @@ variable "tags" {
 }
 
 # ENV VARS
-variable "environmentVariables" {
+variable "environment_variables" {
   type = "map"
   description = "Environment variables"
 }
