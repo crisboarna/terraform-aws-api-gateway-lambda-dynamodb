@@ -11,6 +11,10 @@ output "api_gw_id" {
   value = "${module.apigw.api_gw_id}"
 }
 
+output "api_gw_root_resource_id" {
+  value = "${module.apigw.api_gw_root_resource_id}"
+}
+
 #Lambda
 output "lambda_name" {
   value = "${module.lambda.lambda_name}"
