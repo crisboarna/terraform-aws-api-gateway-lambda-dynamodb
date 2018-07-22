@@ -80,6 +80,10 @@ variable "api_gw_method" {
   default = "POST"
 }
 
+variable "api_gw_dependency_list" {
+  description = "List of aws_api_gateway_integration* that require aws_api_gateway_deployment dependency"
+  type = "list"
+}
 
 #DynamoDB
 variable "dynamodb_table_properties" {

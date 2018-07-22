@@ -13,6 +13,7 @@ module "apigw" {
   lambda_arn = "${module.lambda.lambda_arn}"
   region = "${var.region}"
   lambda_name = "${module.lambda.lambda_name}"
+  dependency_list = "${var.api_gw_dependency_list}"
 }
 
 module "lambda" {

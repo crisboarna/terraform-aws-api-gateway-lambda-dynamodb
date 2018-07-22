@@ -23,3 +23,8 @@ variable "lambda_name" {
 variable "region" {
   description = "The AWS region"
 }
+
+variable "dependency_list" {
+  description = "Deployment dependency list"
+  type = "list"
+}
