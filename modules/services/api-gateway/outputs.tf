@@ -13,3 +13,12 @@ output "api_gw_name" {
 output "api_gw_root_resource_id" {
   value = "${aws_api_gateway_rest_api.api.root_resource_id}"
 }
+
+output "api_gw_api_resource_id" {
+  value = "${aws_api_gateway_resource.api_resource.id}"
+}
+
+output "api_gw_message_resource_id" {
+  value = "${aws_api_gateway_resource.messages_resource.id}"
+}
+
