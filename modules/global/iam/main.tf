@@ -8,8 +8,8 @@ data "template_file" "lambda_dynamodb_policy" {
 }
 
 resource "aws_iam_role_policy" "DynamoDB-Policy" {
-  count = "${length(var.dynamodb_arn_list) >= 0 ? 1 : 0}"
-  name = "${aws_iam_role.lambda-role.name}-Role"
+  count = "${length(var.dynamodb_arn_list) > 0 ? 1 : 0}"
+  name = "${aws_iam_role.lambda-role.name}-Policy"
   role = "${aws_iam_role.lambda-role.id}"
   policy = "${data.template_file.lambda_dynamodb_policy.rendered}"
 }
