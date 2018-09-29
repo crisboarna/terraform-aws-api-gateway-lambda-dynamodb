@@ -1,5 +1,5 @@
 data "template_file" "lambda_dynamodb_policy" {
-  count = "${length(var.dynamodb_policy_action_list) >= 0 ? 1 : 0}"
+  count = "${var.dynamodb_tables_count > 0 ? 1 : 0}"
   template = "${file("${path.module}/dynamodb-policy.json")}"
   vars {
     policy_arn_list = "${join(", ", formatlist("\"%s\"", var.dynamodb_arn_list))}"
@@ -8,7 +8,7 @@ data "template_file" "lambda_dynamodb_policy" {
 }
 
 resource "aws_iam_role_policy" "DynamoDB-Policy" {
-  count = "${length(var.dynamodb_arn_list) > 0 ? 1 : 0}"
+  count = "${var.dynamodb_tables_count > 0 ? 1 : 0}"
   name = "${aws_iam_role.lambda-role.name}-Policy"
   role = "${aws_iam_role.lambda-role.id}"
   policy = "${data.template_file.lambda_dynamodb_policy.rendered}"
