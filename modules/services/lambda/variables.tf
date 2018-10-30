@@ -41,8 +41,18 @@ variable "lambda_timeout" {
   default = 30
 }
 
-variable "lambda_code_s3_bucket" {
+variable "lambda_code_s3_bucket_new" {
+  default = "defaultBucket"
   description = "S3 bucket with source code"
+}
+
+variable "lambda_code_s3_bucket_use_existing" {
+  default = "true"
+  description = "Boolean flag to specify whether to use 'lambda_code_s3_bucket_new' and create new bucket or to use 'lambda_code_s3_bucket_existing and use existing S3 bucket and now a generate new one"
+}
+
+variable "lambda_code_s3_bucket_existing" {
+  description = "Existing 'aws_s3_bucket.bucket'"
 }
 
 variable "lambda_code_s3_key" {
