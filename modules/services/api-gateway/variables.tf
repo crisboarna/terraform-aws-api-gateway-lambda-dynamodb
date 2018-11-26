@@ -1,3 +1,7 @@
+variable "api_gw_disable_resource_creation" {
+  description = "Specify whether to create or not the default /api/messages path or stop at /api"
+}
+
 variable "api_gw_name" {
   description = "The name of the REST API",
 }

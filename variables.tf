@@ -104,6 +104,11 @@ variable "api_gw_dependency_list" {
   default = []
 }
 
+variable "api_gw_disable_resource_creation" {
+  description = "Specify whether to create or not the default /api/messages path or stop at /api"
+  default = "false"
+}
+
 #DynamoDB
 variable "dynamodb_table_properties" {
   type = "list"
