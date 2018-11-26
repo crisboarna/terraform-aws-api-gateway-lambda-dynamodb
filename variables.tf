@@ -47,6 +47,11 @@ variable "lambda_timeout" {
   default = 30
 }
 
+variable "lambda_file_name" {
+  default = "defaultLambdaFile.zip"
+  description = "Path to lambda code zip"
+}
+
 variable "lambda_code_s3_bucket_new" {
   default = "defaultBucket"
   description = "S3 bucket with source code"
@@ -58,16 +63,18 @@ variable "lambda_code_s3_bucket_use_existing" {
 }
 
 variable "lambda_code_s3_bucket_existing" {
+  default = "defaultBucket"
   description = "Existing 'aws_s3_bucket.bucket'"
 }
 
 variable "lambda_code_s3_key" {
+  default = "defaultS3Key"
   description = "Location of Lambda code in S3 bucket"
 }
 
 variable "lambda_code_s3_storage_class" {
-  description = "Lambda code S3 storage class"
   default = "ONEZONE_IA"
+  description = "Lambda code S3 storage class"
 }
 
 variable "lambda_code_s3_bucket_visibility" {
@@ -76,6 +83,7 @@ variable "lambda_code_s3_bucket_visibility" {
 }
 
 variable "lambda_zip_path" {
+  default = "defaultZipPath"
   description = "Local path to Lambda zip code"
 }
 
