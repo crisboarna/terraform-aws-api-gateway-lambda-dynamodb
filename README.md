@@ -13,7 +13,7 @@
 ## Features
 Terraform module which deploys a serverless HTTP endpoint backed by AWS API Gateway, Lambda & DynamoDB
  
-###API Gateway
+### API Gateway
 
 This module is created with a single stage that is given as parameter.
 The default path that is created is `/api/messages`. This can be expanded upon as the API GW ID, resources and methods are exposed.
@@ -26,7 +26,7 @@ Allows specification of Endpoint Configuration Type via variable `api_gw_endpoin
 This results in having to create the final `aws_api_gateway_deployment` as well.
 
 
-###Lambda
+### Lambda
 
 This module is created with full customization by user.
 Can use either local filename path `lambda_file_name` or remote S3 bucket configuration.
@@ -36,7 +36,7 @@ Exports S3 bucket to allow usage by multiple Lambda's but given `lambda_code_s3_
 - This module by default, if created allows accompanying Lambda access to `dynamodb:PutItem`, `dynamodb:DescribeTable`, `dynamodb:DeleteItem`, `dynamodb:GetItem`, `dynamodb:Scan`, `dynamodb:Query` all DynamoDB tables.
 
 
-###DynamoDB
+### DynamoDB
 
 This module is optional. Lambda is created with R/W permission for DynamoDB to allow Lambda creation of tables or optionally to create them before-hand with this script.
 - This module by default, if created allows accompanying Lambda access to `dynamodb:PutItem`, `dynamodb:DescribeTable`, `dynamodb:DeleteItem`, `dynamodb:GetItem`, `dynamodb:Scan`, `dynamodb:Query` all DynamoDB tables.
