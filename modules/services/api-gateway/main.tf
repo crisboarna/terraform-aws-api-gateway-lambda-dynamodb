@@ -2,6 +2,9 @@ data "aws_caller_identity" "current" {}
 
 resource "aws_api_gateway_rest_api" "api" {
   name = "${var.api_gw_name}"
+  endpoint_configuration {
+    types = ["${format("\"%s\"", var.api_gw_endpoint_configuration_type)}"]
+  }
 }
 
 resource "aws_api_gateway_deployment" "deployment" {

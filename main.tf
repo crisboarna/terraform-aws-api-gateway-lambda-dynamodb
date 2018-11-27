@@ -10,6 +10,7 @@ module "apigw" {
   #Setup
   api_gw_name                           = "${var.project}-API-Gateway-${terraform.workspace}"
   api_gw_disable_resource_creation      = "${var.api_gw_disable_resource_creation}"
+  api_gw_endpoint_configuration_type    = "${var.api_gw_endpoint_configuration_type}"
   stage_name                            = "${terraform.workspace}"
   method                                = "${var.api_gw_method}"
   lambda_arn                            = "${module.lambda.lambda_arn}"

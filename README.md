@@ -18,8 +18,11 @@ Terraform module which deploys a serverless HTTP endpoint backed by AWS API Gate
 This module is created with a single stage that is given as parameter.
 The default path that is created is `/api/messages`. This can be expanded upon as the API GW ID, resources and methods are exposed.
 If you do not wish to have the default values, you can specify `api_gw_disable_resource_creation = true` and you can create the paths desired. 
+Allows specification of Endpoint Configuration Type via variable `api_gw_endpoint_configuration_type` with `EDGE`, `REGIONAL` or `PRIVATE`. Defaults to `EDGE`
+
 
 **Note** 
+
 This results in having to create the final `aws_api_gateway_deployment` as well.
 
 
