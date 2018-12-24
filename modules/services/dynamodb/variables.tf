@@ -21,3 +21,9 @@ variable "dynamodb_table_secondary_index" {
   default = [[]]
   description = "List of list of maps representing each table secondary index list. Required due to current HCL limitations"
 }
+
+variable "dynamodb_table_local_secondary_index" {
+  type = "list"
+  default = [[]]
+  description = "List of list of maps representing each table local secondary index list. Required due to current HCL limitations"
+}

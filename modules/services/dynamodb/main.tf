@@ -8,6 +8,7 @@ resource "aws_dynamodb_table" "table" {
   stream_enabled = "${lookup(var.dynamodb_table_properties[count.index], "stream_enabled", "")}"
   stream_view_type = "${lookup(var.dynamodb_table_properties[count.index], "stream_view_type", "")}"
   attribute = "${var.dynamodb_table_attributes[count.index]}"
+  local_secondary_index = "${var.dynamodb_table_local_secondary_index[count.index]}"
   global_secondary_index = "${var.dynamodb_table_secondary_index[count.index]}"
   tags = "${var.tags}"
 }

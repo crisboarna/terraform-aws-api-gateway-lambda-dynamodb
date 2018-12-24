@@ -55,6 +55,7 @@ module "dynamodb" {
   #Setup
   dynamodb_table_properties             = "${var.dynamodb_table_properties}"
   dynamodb_table_attributes             = "${var.dynamodb_table_attributes}"
+  dynamodb_table_local_secondary_index  = "${var.dynamodb_table_local_secondary_index}"
   dynamodb_table_secondary_index        = "${var.dynamodb_table_secondary_index}"
 
   #Tags
