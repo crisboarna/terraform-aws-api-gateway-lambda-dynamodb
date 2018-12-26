@@ -63,3 +63,7 @@ output "dynamodb_table_range_keys" {
 output "dynamodb_table_arns" {
   value = ["${module.dynamodb.dynamodb_table_arns}"]
 }
+
+output "dynamodb_table_stream_arns" {
+  value = ["${module.dynamodb.dynamodb_table_stream_arns}"]
+}

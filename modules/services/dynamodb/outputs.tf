@@ -13,3 +13,7 @@ output "dynamodb_table_range_keys" {
 output "dynamodb_table_arns" {
   value = ["${aws_dynamodb_table.table.*.arn}"]
 }
+
+output "dynamodb_table_stream_arns" {
+  value = ["${aws_dynamodb_table.table.*.stream_arn}"]
+}
