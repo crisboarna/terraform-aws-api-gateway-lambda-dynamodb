@@ -142,3 +142,9 @@ variable "dynamodb_policy_action_list" {
   type = "list"
   default = ["dynamodb:DescribeTable", "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:Scan", "dynamodb:Query"]
 }
+
+variable "dynamodb_table_ttl" {
+  type = "list"
+  default = [[]]
+  description = "List of list of maps representing each table local secondary index list. Required due to current HCL limitations"
+}
