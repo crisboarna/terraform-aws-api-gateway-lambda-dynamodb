@@ -62,7 +62,7 @@ module "api-gateway-lambda-dynamodb" {
 5. Run `terraform apply -var-file="<.tfvars file>` to deploy infrastructure
 
 **Example Deployment Script**
-```js
+```sh
 #!/usr/bin/env bash
 
 if [[ ! -d .terraform ]]; then
