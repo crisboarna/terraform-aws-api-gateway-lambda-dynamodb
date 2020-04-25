@@ -102,7 +102,7 @@ module "api_lambda_dynamodb" {
   lambda_code_s3_bucket_visibility = "private"
   lambda_zip_path = "../../awesome-project.zip"
   lambda_memory_size = 256
-  
+ 
   #DynamoDB
   dynamodb_table_properties = [
     { 
@@ -154,7 +154,7 @@ module "api_lambda_dynamodb" {
   }
   
   #Lambda Environment variables
-  environmentVariables = {
+  environment_variables = {
     NODE_ENV = "production"
   }
 }
