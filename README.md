@@ -4,6 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 ![stability-stable](https://img.shields.io/badge/stability-stable-brightgreen.svg)
 ![Commitizen-friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)
+
 ## Table of Contents
 * [Features](#features)
 * [Usage](#usage)
@@ -13,6 +14,10 @@
 ## Features
 Terraform module which deploys a serverless HTTP endpoint backed by AWS API Gateway, Lambda & DynamoDB
  
+***Attention***
+
+Starting from version 1.15.0, this module targets Terraform 0.12+. If you are using Terraform <=v0.11 you must use up to version 1.14.0.
+
 ### API Gateway
 
 This module is created with a single stage that is given as parameter.
@@ -48,7 +53,7 @@ The attributes and table properties are in separate lists due to current HCL lan
 ```hcl-terraform
 module "api-gateway-lambda-dynamodb" {
   source  = "crisboarna/api-gateway-lambda-dynamodb/aws"
-  version = "0.1.1"
+  version = "1.15.0"
 
   # insert the 10 required variables here
 }
@@ -81,7 +86,7 @@ terraform apply -var-file=$1
 ```hcl-terraform
 module "api_lambda_dynamodb" {
   source  = "crisboarna/terraform-aws-api-gateway-lambda-dynamodb"
-  version = "v0.1.0"
+  version = "1.15.0"
 
   #Global
   region = "eu-west-1"
@@ -102,7 +107,7 @@ module "api_lambda_dynamodb" {
   lambda_code_s3_bucket_visibility = "private"
   lambda_zip_path = "../../awesome-project.zip"
   lambda_memory_size = 256
- 
+  
   #DynamoDB
   dynamodb_table_properties = [
     { 
