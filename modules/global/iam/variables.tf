@@ -4,6 +4,7 @@ variable "lambda_name" {
 
 variable "lambda_layers" {
   description = "Lambda Layer ARNS"
+  type = list(string)
   default = []
 }
 

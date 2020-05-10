@@ -93,16 +93,19 @@ variable "lambda_memory_size" {
 
 variable "lambda_vpc_security_group_ids" {
   description = "Lambda VPC Security Group IDs"
+  type = list(string)
   default = []
 }
 
 variable "lambda_vpc_subnet_ids" {
   description = "Lambda VPC Subnet IDs"
+  type = list(string)
   default = []
 }
 
 variable "lambda_layers" {
   description = "Lambda Layer ARNS"
+  type = list(string)
   default = []
 }
 
