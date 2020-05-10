@@ -55,7 +55,7 @@ The attributes and table properties are in separate lists due to current HCL lan
 ```hcl-terraform
 module "api-gateway-lambda-dynamodb" {
   source  = "crisboarna/api-gateway-lambda-dynamodb/aws"
-  version = "1.16.0"
+  version = "1.16.2"
 
   # insert the 10 required variables here
 }
@@ -88,7 +88,7 @@ terraform apply -var-file=$1
 ```hcl-terraform
 module "api_lambda_dynamodb" {
   source  = "crisboarna/terraform-aws-api-gateway-lambda-dynamodb"
-  version = "1.16.0"
+  version = "1.16.2"
 
   #Global
   region = "eu-west-1"

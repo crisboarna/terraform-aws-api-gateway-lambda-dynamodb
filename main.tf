@@ -71,6 +71,7 @@ module "iam" {
 
   #Setup
   lambda_name                           = local.lambda_function_name
+  lambda_layers                         = var.lambda_layers
   api_gw_name                           = module.apigw.api_gw_name
   api_gw_id                             = module.apigw.api_gw_id
   dynamodb_arn_list                     = module.dynamodb.dynamodb_table_arns
