@@ -34,7 +34,9 @@ This results in having to create the final `aws_api_gateway_deployment` as well.
 ### Lambda
 
 This module is created with full customization by user.
-Can use either local filename path `lambda_file_name` or remote S3 bucket configuration.
+- Can use either local filename path `lambda_file_name` or remote S3 bucket configuration.
+- Supports Lambda Layers
+- Supports VPC
 
 **Must** use either the local filename or S3 option as they are mutually exclusive. 
 Exports S3 bucket to allow usage by multiple Lambda's but given `lambda_code_s3_bucket_use_existing=true` it will use existing S3 bucket provided in `lambda_code_s3_bucket_existing`.
@@ -53,7 +55,7 @@ The attributes and table properties are in separate lists due to current HCL lan
 ```hcl-terraform
 module "api-gateway-lambda-dynamodb" {
   source  = "crisboarna/api-gateway-lambda-dynamodb/aws"
-  version = "1.15.0"
+  version = "1.16.0"
 
   # insert the 10 required variables here
 }
@@ -86,7 +88,7 @@ terraform apply -var-file=$1
 ```hcl-terraform
 module "api_lambda_dynamodb" {
   source  = "crisboarna/terraform-aws-api-gateway-lambda-dynamodb"
-  version = "1.15.0"
+  version = "1.16.0"
 
   #Global
   region = "eu-west-1"
@@ -107,7 +109,10 @@ module "api_lambda_dynamodb" {
   lambda_code_s3_bucket_visibility = "private"
   lambda_zip_path = "../../awesome-project.zip"
   lambda_memory_size = 256
-  
+  lambda_vpc_security_group_ids = [aws_security_group.vpc_security_group.id]
+  lambda_vpc_subnet_ids = [aws_subnet.vpc_subnet_a.id]
+  lambda_layers = [data.aws_lambda_layer_version.layer.arn]
+
   #DynamoDB
   dynamodb_table_properties = [
     { 

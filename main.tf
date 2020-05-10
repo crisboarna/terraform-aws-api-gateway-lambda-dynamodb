@@ -38,6 +38,8 @@ module "lambda" {
   lambda_code_s3_bucket_visibility      = var.lambda_code_s3_bucket_visibility
   lambda_zip_path                       = var.lambda_zip_path
   lambda_memory_size                    = var.lambda_memory_size
+  lambda_vpc_security_group_ids         = var.lambda_vpc_security_group_ids
+  lambda_vpc_subnet_ids                 = var.lambda_vpc_subnet_ids
 
   #Internal
   lambda_role                           = module.iam.lambda_role_arn

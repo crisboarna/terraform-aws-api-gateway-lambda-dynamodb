@@ -2,6 +2,11 @@ variable "lambda_name" {
   description = "The name of the Lambda function"
 }
 
+variable "lambda_layers" {
+  description = "Lambda Layer ARNS"
+  default = []
+}
+
 variable "api_gw_name" {
   description = "The name of the API Gateway"
 }
