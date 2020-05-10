@@ -7,7 +7,7 @@ variable "api_gw_endpoint_configuration_type" {
 }
 
 variable "api_gw_name" {
-  description = "The name of the REST API",
+  description = "The name of the REST API"
 }
 
 variable "stage_name" {
