@@ -13,8 +13,8 @@ resource "aws_lambda_function" "lambda_file" {
   timeout                     = var.lambda_timeout
   source_code_hash            = base64sha256(file(var.lambda_file_name))
   memory_size                 = var.lambda_memory_size
-
   layers                      = var.lambda_layers
+
   vpc_config {
     security_group_ids        = var.lambda_vpc_security_group_ids
     subnet_ids                = var.lambda_vpc_subnet_ids
@@ -39,6 +39,12 @@ resource "aws_lambda_function" "lambda_s3" {
   s3_bucket                   = local.s3_bucket
   s3_key                      = var.lambda_code_s3_key
   memory_size                 = var.lambda_memory_size
+  layers                      = var.lambda_layers
+
+  vpc_config {
+    security_group_ids        = var.lambda_vpc_security_group_ids
+    subnet_ids                = var.lambda_vpc_subnet_ids
+  }
 
   environment {
     variables                 = var.environment_variables
